@@ -274,7 +274,7 @@
     <button type="submit" id="b-cancel" class="btn btn-default">Cancel</button>
     <button type="submit" id="b-submit" class="btn btn-default" >Save</button>
 
-    
+
   </div>
 
   <script>
@@ -318,7 +318,7 @@
       var options = {'save' : 1};
       for (i=0; i<10; i++) {
         options['favoritestop_'+i] = $("#favoritestop_"+i).val();
-        for (j=0; j<2; j++) {
+        for (j=0; j<=2; j++) {
           options['favoritedirection_'+i+'_'+j] = $("#favoritedirection_"+i+"_"+j).val();
         }
       }
