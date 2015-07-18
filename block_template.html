@@ -1,0 +1,25 @@
+
+<div class="form-group" id="favorite_div_X" style="display:none">
+  <label for="favoritestop_X" class="control-label"> Favorite stop X </label>
+  <button onclick="moveupStop(X);" class="btn btn-info" type="button">&uarr;</button>
+  <button onclick="removeStop(X);" class="btn btn-danger" type="button">-</button>
+  <input class="form-control" id="favoritestop_X">
+</div>
+<div style="margin-left:30px; display:none" id="favoritedirectiongroup_X">
+  <div class="form-group" id="favoritedirection_div_X_0">
+    <label for="favoritedirection_X_0" class="control-label"> Direction (optional) </label>
+    <button onclick="removeDirection(X,0);" class="btn btn-danger" type="button">-</button>
+    <input class="form-control" id="favoritedirection_X_0">
+  </div>
+  <div class="form-group" id="favoritedirection_div_X_1" style="display:none">
+    <label for="favoritedirection_X_1" class="control-label"> Direction (2nd) (optional) </label>
+    <button onclick="removeDirection(X,1);" class="btn btn-danger" type="button">-</button>
+    <input class="form-control" id="favoritedirection_X_1">
+  </div>
+  <div class="form-group" id="favoritedirection_div_X_2" style="display:none">
+    <label for="favoritedirection_X_2" class="control-label"> Direction (3rd) (optional) </label>
+    <button onclick="removeDirection(X,2);" class="btn btn-danger" type="button">-</button>
+    <input class="form-control" id="favoritedirection_X_2">
+  </div>
+  <button onclick="addDirection(X);" class="btn btn-success" type="button">+</button>
+</div>
