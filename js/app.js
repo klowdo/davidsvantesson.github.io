@@ -10,7 +10,7 @@ var app = angular.module('VastTid',[]);
                   if (results == null) return "";
                   else return results[1];
             }
-          
+
           var init = function () {
                 for (var index = 0; index < 10; index++) {
                       var favoritestop = getURLVariable("favoritestop_"+index);
@@ -20,7 +20,7 @@ var app = angular.module('VastTid',[]);
                               Directions:[]
                              }
                              for (var index2 = 0; index2 < 3; index2++) {
-                                  var favoritedirection = getURLVariable("favoritedirection_"+index+"_"+index2) 
+                                  var favoritedirection = getURLVariable("favoritedirection_"+index+"_"+index2)
                                   if (favoritedirection.length != 0) {
                                         stop.Directions.push(favoritedirection);
                                   }
@@ -42,22 +42,22 @@ var app = angular.module('VastTid',[]);
             }
       return defaultValue || false;
     }
-          
+
           $scope.addStop = function(newStop){
                 if ($scope.favoritedata.length > 9) {
                       alert('Maximum ten favorite stops')
                 }else{
-                   
+
                   $scope.favoritedata.push({favoritestop:newStop,Directions:[]});
-                  $scope.newStop = "";   
+                  $scope.newStop = "";
                 }
           };
           $scope.addDirection = function(index,NewDirection){
                 if ($scope.favoritedata[index].Directions.length > 2) {
-                  alert("Maximum three directions per favorite");   
+                  alert("Maximum three directions per favorite");
                 }else{
-                  $scope.favoritedata[index].Directions.push(NewDirection);    
-                  $scope.newDirection ="";  
+                  $scope.favoritedata[index].Directions.push(NewDirection);
+                  $scope.newDirection ="";
                 }
           };
           $scope.Save = function () {
@@ -67,8 +67,11 @@ var app = angular.module('VastTid',[]);
                               data["favoritedirection_" +key+"_"+key2] =  favoritedirection;
                         });
                });
-                var return_to = getQueryParam('return_to', 'pebblejs://close#');
-                document.location = return_to + encodeURIComponent(JSON.stringify(data)); 
+               location.href = 'pebblejs://close#' +
+                encodeURIComponent(JSON.stringify(data));
+
+                //var return_to = getQueryParam('return_to', 'pebblejs://close#');
+              //  document.location = return_to + encodeURIComponent(JSON.stringify(data)); 
           };
           $scope.RemoveStop = function (index) {
                 $scope.favoritedata.splice(index, 1);
@@ -76,7 +79,7 @@ var app = angular.module('VastTid',[]);
           $scope.RemoveDirectory = function (thing,dir) {
                 var indexOfStop = $scope.favoritedata.indexOf(thing);
                 var indexOfdir = $scope.favoritedata[indexOfStop].Directions.indexOf(dir);
-                $scope.favoritedata[indexOfStop].Directions.splice(indexOfdir, 1);  
+                $scope.favoritedata[indexOfStop].Directions.splice(indexOfdir, 1);
           }
           init();
     });
